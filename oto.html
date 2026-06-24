@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Süper Galeri | Sınıfının En İyisi Araçlar</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ana Stil Dosyası -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+    <header id="navbar">
+      <nav class="nav-container">
+
+        <a href="#hero" class="nav-logo">
+          SÜPER<span>GALERİ</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#hero">Ana Sayfa</a></li>
+          <li><a href="#araclar">Araçlar</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Menüyü Aç/Kapat">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </nav>
+    </header>
+
+    <!-- HERO ALANI -->
+    <section id="hero">
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Premium Araç Galerisi</p>
+
+        <h1 class="hero-title">
+          Hayalindeki<br />
+          <span>Aracı Bul</span>
+        </h1>
+
+        <p class="hero-text">
+          Özenle seçilmiş, eksiksiz bakımlı ve performansıyla öne çıkan
+          araçlar tek bir çatı altında. Sıradanı değil, sana yakışanı sun.
+        </p>
+
+        <a href="#araclar" class="hero-btn">Araçları Keşfet</a>
+      </div>
+    </section>
+
+    <!-- ARAÇLAR GALERİSİ -->
+    <section id="araclar">
+      <div class="section-header">
+        <p class="section-eyebrow">Stoktaki Araçlar</p>
+        <h2 class="section-title">Galeri</h2>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="tumu">Tümü</button>
+        <button class="filter-btn" data-filter="otomobil">Otomobil</button>
+        <button class="filter-btn" data-filter="suv">SUV</button>
+      </div>
+
+      <div class="car-grid">
+
+        <!-- Araç 1 -->
+        <article class="car-card" data-category="otomobil">
+          <div class="car-image">
+            <img src="araba1.webp" alt="BMW 320i" />
+            <span class="car-badge">Otomobil</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-name">BMW 320i</h3>
+            <p class="car-price">2.950.000 ₺</p>
+            <ul class="car-specs">
+              <li>2023</li>
+              <li>12.000 km</li>
+              <li>Otomatik</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Araç 2 -->
+        <article class="car-card" data-category="otomobil">
+          <div class="car-image">
+            <img src="araba2.webp" alt="Mercedes C200 AMG" />
+            <span class="car-badge">Otomobil</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-name">Mercedes C200 AMG</h3>
+            <p class="car-price">3.100.000 ₺</p>
+            <ul class="car-specs">
+              <li>2022</li>
+              <li>15.000 km</li>
+              <li>Otomatik</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Araç 3 -->
+        <article class="car-card" data-category="otomobil">
+          <div class="car-image">
+            <img src="araba3.webp" alt="Audi A4" />
+            <span class="car-badge">Otomobil</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-name">Audi A4</h3>
+            <p class="car-price">2.700.000 ₺</p>
+            <ul class="car-specs">
+              <li>2021</li>
+              <li>22.000 km</li>
+              <li>Otomatik</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Araç 4 -->
+        <article class="car-card" data-category="suv">
+          <div class="car-image">
+            <img src="araba4.webp" alt="BMW X5" />
+            <span class="car-badge car-badge--suv">SUV</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-name">BMW X5</h3>
+            <p class="car-price">4.250.000 ₺</p>
+            <ul class="car-specs">
+              <li>2023</li>
+              <li>8.500 km</li>
+              <li>Otomatik</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Araç 5 -->
+        <article class="car-card" data-category="suv">
+          <div class="car-image">
+            <img src="araba5.webp" alt="Range Rover Evoque" />
+            <span class="car-badge car-badge--suv">SUV</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-name">Range Rover Evoque</h3>
+            <p class="car-price">3.850.000 ₺</p>
+            <ul class="car-specs">
+              <li>2022</li>
+              <li>17.000 km</li>
+              <li>Otomatik</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Araç 6 -->
+        <article class="car-card" data-category="suv">
+          <div class="car-image">
+            <img src="araba6.webp" alt="Volvo XC60" />
+            <span class="car-badge car-badge--suv">SUV</span>
+          </div>
+          <div class="car-info">
+            <h3 class="car-name">Volvo XC60</h3>
+            <p class="car-price">3.400.000 ₺</p>
+            <ul class="car-specs">
+              <li>2021</li>
+              <li>19.500 km</li>
+              <li>Otomatik</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda">
+      <div class="about-content">
+        <p class="section-eyebrow">Biz Kimiz</p>
+        <h2 class="section-title">Hakkımızda</h2>
+
+        <p class="about-text">
+          Süper Galeri olarak 2014'ten bu yana, her aracı tek tek inceleyip
+          eksiksiz bakım geçmişiyle müşterilerimize sunuyoruz. Amacımız
+          sadece araç satmak değil, güvenle sürebileceğin bir ortak bulmanı
+          sağlamak. Şeffaflık ve kalite, işimizin temelini oluşturuyor.
+        </p>
+      </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="iletisim">
+      <div class="section-header">
+        <p class="section-eyebrow">Bize Ulaşın</p>
+        <h2 class="section-title">İletişim</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-item">
+          <span class="contact-label">Telefon</span>
+          <p class="contact-value">0 (000) 000 00 00</p>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-label">E-posta</span>
+          <p class="contact-value">super@gmail.com</p>
+        </div>
+
+        <div class="contact-item">
+          <span class="contact-label">Adres</span>
+          <p class="contact-value">Atatürk Cad. No: 24, Kadıköy / İstanbul</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <p class="footer-text">&copy; 2026 Süper Galeri. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- JavaScript Dosyası -->
+    <script src="script.js"></script>
+
+  </body>
+</html>

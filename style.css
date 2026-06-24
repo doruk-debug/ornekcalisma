@@ -1,0 +1,555 @@
+/* ============================================
+   SÜPER GALERİ - STİL DOSYASI
+   ============================================ */
+
+/* ---- 1. DEĞİŞKENLER (RENKLER, FONTLAR) ---- */
+:root {
+  /* Arka plan tonları */
+  --bg-primary: #0a0a0c;
+  --bg-secondary: #131316;
+  --bg-card: #18181c;
+
+  /* Kırmızı vurgu tonları */
+  --red-primary: #e0202f;
+  --red-glow: #ff2d3d;
+  --red-dark: #8c1019;
+
+  /* Metin tonları */
+  --text-primary: #f5f5f0;
+  --text-secondary: #9a9aa0;
+  --text-muted: #5c5c63;
+
+  /* Çizgi / kenarlık */
+  --border-color: #25252b;
+
+  /* Fontlar */
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* ---- 2. RESET (TARAYICI VARSAYILANLARINI SIFIRLAMA) ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---- 3. NAVBAR ---- */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+
+.nav-logo span {
+  color: var(--red-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--red-primary);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger menü butonu (mobilde görünecek) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* ---- 4. HERO ALANI ---- */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(10, 10, 12, 0.55),
+      rgba(10, 10, 12, 0.85)
+    ),
+    url("hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Arka planda bulanık kırmızı ışık efekti */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(224, 32, 47, 0.25) 0%,
+    rgba(224, 32, 47, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.hero-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red-primary);
+  margin-bottom: 18px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.hero-title span {
+  color: var(--red-primary);
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto 36px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: var(--red-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.hero-btn:hover {
+  background-color: var(--red-glow);
+  transform: translateY(-2px);
+}
+
+/* ---- 5. ORTAK BÖLÜM BAŞLIĞI STİLİ ---- */
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.section-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red-primary);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ---- 6. ARAÇLAR GALERİSİ ---- */
+#araclar {
+  padding: 120px 24px;
+  background-color: var(--bg-primary);
+}
+
+/* Filtre Butonları */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  padding: 10px 28px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--red-primary);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--red-primary);
+  border-color: var(--red-primary);
+  color: #fff;
+}
+
+.car-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.car-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--red-primary);
+}
+
+.car-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #0e0e10;
+}
+
+.car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.car-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 14px;
+  background-color: var(--red-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+}
+
+.car-badge--suv {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--red-primary);
+  color: var(--red-primary);
+}
+
+.car-info {
+  padding: 22px 22px 26px;
+}
+
+.car-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.car-price {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--red-primary);
+  margin-bottom: 16px;
+}
+
+.car-specs {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.car-specs li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 5px 12px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* ---- 7. HAKKIMIZDA ---- */
+#hakkimizda {
+  padding: 100px 24px;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-content {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ---- 8. İLETİŞİM ---- */
+#iletisim {
+  padding: 120px 24px;
+  background-color: var(--bg-primary);
+}
+
+.contact-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 32px 20px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-item:hover {
+  border-color: var(--red-primary);
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red-primary);
+  margin-bottom: 10px;
+}
+
+.contact-value {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+/* ---- 9. FOOTER ---- */
+#footer {
+  padding: 32px 24px;
+  text-align: center;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   10. RESPONSIVE (MOBİL UYUMLULUK)
+   ============================================ */
+
+/* ---- TABLET (768px ve altı) ---- */
+@media (max-width: 768px) {
+
+  /* Navbar: menü linkleri gizlenir, hamburger görünür */
+  .nav-links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hamburger ikonu çarpıya (X) dönüşür */
+  .nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Araç kartları: 3'lü yerine 2'li grid */
+  .car-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* İletişim: 3'lü yerine tek sütun */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
+/* ---- TELEFON (480px ve altı) ---- */
+@media (max-width: 480px) {
+
+  .nav-container {
+    padding: 16px 20px;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    padding: 14px 32px;
+    font-size: 0.9rem;
+  }
+
+  #araclar,
+  #hakkimizda,
+  #iletisim {
+    padding: 72px 20px;
+  }
+
+  /* Araç kartları: tek sütun */
+  .car-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
